@@ -7,11 +7,11 @@ import { Link, useLocation } from "react-router-dom";
 import Posts from "../components/home/Posts";
 import Status from "../components/home/Status";
 import StoryBar from "../components/story/StoryBar";
-import LeftSidebar from "../components/layout/LeftSidebar";
 import RightSidebar from "../components/layout/RightSidebar";
 import { GLOBALTYPES } from "../redux/actions/globalTypes";
 
 import LoadIcon from "../images/loading.gif";
+import '../styles/nexus-home.css';
 
 const Home = () => {
   const { homePosts, auth } = useSelector((state) => state);
@@ -40,88 +40,80 @@ const Home = () => {
   };
 
   return (
-    <>
-      <div className="main-layout">
-        {/* Left Sidebar */}
-        <LeftSidebar />
-
-        {/* Center Feed */}
-        <div className="center-feed">
+    <div className="nexus-home-container">
+      <div className="nexus-home-layout">
+        {/* Main Feed */}
+        <main className="nexus-main-feed">
           {/* Stories Section */}
-          <div className="feed-card">
-            <div className="stories-section">
-              <div className="stories-header">
-                <h3 className="stories-title" style={{ color: 'var(--text-primary)' }}>{t('home.storiesTitle')}</h3>
-                <button
-                  className="stories-add-btn"
-                  onClick={() => dispatch({ type: GLOBALTYPES.STORY, payload: true })}
-                >
-                  <i className="fas fa-plus"></i>
-                </button>
-              </div>
-              <StoryBar />
+          <section className="nexus-stories-section">
+            <div className="nexus-stories-header">
+              <h2 className="nexus-section-title">Stories</h2>
+              <button
+                className="nexus-icon-button"
+                onClick={() => dispatch({ type: GLOBALTYPES.STORY, payload: true })}
+                aria-label="Create story"
+              >
+                <i className="fas fa-plus"></i>
+              </button>
             </div>
-          </div>
+            <StoryBar />
+          </section>
 
           {/* Post Creation Section */}
           {showStatus && (
-            <div className="feed-card">
-              <div className="post-composer">
-                <Status onClose={handleCloseStatus} />
-              </div>
-            </div>
+            <section className="nexus-post-composer-section">
+              <Status onClose={handleCloseStatus} />
+            </section>
           )}
 
           {/* Posts Feed */}
           {homePosts.loading ? (
-            <div className="feed-card">
-              <div className="loading-container">
-                <div className="loading-spinner">
-                  <img src={LoadIcon} alt="loading" className="loading-icon" />
-                  <p className="loading-text" style={{ color: 'var(--text-secondary)' }}>{t('home.loadingText')}</p>
-                </div>
+            <div className="nexus-loading-state">
+              <div className="nexus-loading-spinner">
+                <img src={LoadIcon} alt="Loading" />
+                <p>{t('home.loadingText')}</p>
               </div>
             </div>
           ) : homePosts.result === 0 ? (
-            <div className="feed-card">
-              <div className="empty-feed">
-                <div className="empty-icon">🚀</div>
-                <h3 className="empty-title" style={{ color: 'var(--text-primary)' }}>{t('home.emptyTitle')}</h3>
-                <p className="empty-subtitle" style={{ color: 'var(--text-tertiary)' }}>{t('home.emptySubtitle')}</p>
-              </div>
+            <div className="nexus-empty-state">
+              <div className="nexus-empty-icon">✨</div>
+              <h3 className="nexus-empty-title">{t('home.emptyTitle')}</h3>
+              <p className="nexus-empty-subtitle">{t('home.emptySubtitle')}</p>
             </div>
           ) : (
             <Posts />
           )}
-        </div>
+        </main>
 
         {/* Right Sidebar */}
-        <RightSidebar />
+        <aside className="nexus-sidebar">
+          <RightSidebar />
+        </aside>
       </div>
 
       {/* Mobile Bottom Navigation */}
-      <div className="mobile-bottom-nav">
-        <div className="mobile-nav-items">
-          {mobileNavItems.map((item, index) => (
-            <Link
-              key={index}
-              to={item.path}
-              className={`mobile-nav-item ${isActive(item.path) ? 'active' : ''}`}
-            >
-              <i className={`mobile-nav-icon ${item.icon}`}></i>
-              <span className="mobile-nav-label">{item.label}</span>
-            </Link>
-          ))}
-        </div>
-      </div>
+      <nav className="nexus-mobile-nav">
+        {mobileNavItems.map((item, index) => (
+          <Link
+            key={index}
+            to={item.path}
+            className={`nexus-mobile-nav-item ${isActive(item.path) ? 'active' : ''}`}
+          >
+            <i className={item.icon}></i>
+            <span>{item.label}</span>
+          </Link>
+        ))}
+      </nav>
 
       {/* Floating Action Button */}
-      <div className="fab-container">
-        <button className="fab-button" onClick={handleFabClick} title={t('home.createPost')}>
-          <i className="fas fa-plus"></i>
-        </button>
-      </div>
-    </>
+      <button 
+        className="nexus-fab" 
+        onClick={handleFabClick} 
+        aria-label={t('home.createPost')}
+      >
+        <i className="fas fa-plus"></i>
+      </button>
+    </div>
   );
 };
 

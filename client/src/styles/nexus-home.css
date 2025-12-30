@@ -1,0 +1,261 @@
+/* ===================================
+   NEXUS HOME PAGE - Premium Feed Design
+   =================================== */
+
+.nexus-home-container {
+  min-height: calc(var(--vh, 1vh) * 100);
+  padding-top: var(--nexus-header-height);
+  background: var(--nexus-bg-primary);
+}
+
+.nexus-home-layout {
+  max-width: var(--nexus-content-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--nexus-space-2xl);
+  padding: var(--nexus-space-2xl) var(--nexus-space-xl);
+}
+
+/* Main Feed */
+.nexus-main-feed {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nexus-space-xl);
+  min-width: 0;
+}
+
+/* Stories Section */
+.nexus-stories-section {
+  background: var(--nexus-bg-elevated);
+  border: 1px solid var(--nexus-border-light);
+  border-radius: var(--nexus-radius-2xl);
+  padding: var(--nexus-space-xl);
+  box-shadow: var(--nexus-shadow-sm);
+}
+
+.nexus-stories-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--nexus-space-lg);
+}
+
+.nexus-section-title {
+  font-size: var(--nexus-text-xl);
+  font-weight: var(--nexus-font-bold);
+  color: var(--nexus-text-primary);
+  margin: 0;
+}
+
+.nexus-icon-button {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--nexus-radius-lg);
+  background: var(--nexus-bg-secondary);
+  border: 1px solid var(--nexus-border-light);
+  color: var(--nexus-text-secondary);
+  cursor: pointer;
+  transition: all var(--nexus-transition-base);
+}
+
+.nexus-icon-button:hover {
+  background: var(--nexus-primary);
+  color: white;
+  border-color: var(--nexus-primary);
+  transform: scale(1.05);
+}
+
+/* Post Composer Section */
+.nexus-post-composer-section {
+  background: var(--nexus-bg-elevated);
+  border: 1px solid var(--nexus-border-light);
+  border-radius: var(--nexus-radius-2xl);
+  padding: var(--nexus-space-xl);
+  box-shadow: var(--nexus-shadow-sm);
+  animation: slideUp 0.4s ease-out;
+}
+
+/* Loading State */
+.nexus-loading-state {
+  background: var(--nexus-bg-elevated);
+  border: 1px solid var(--nexus-border-light);
+  border-radius: var(--nexus-radius-2xl);
+  padding: var(--nexus-space-4xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.nexus-loading-spinner {
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.nexus-loading-spinner img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: var(--nexus-space-lg);
+}
+
+.nexus-loading-spinner p {
+  color: var(--nexus-text-tertiary);
+  font-size: var(--nexus-text-sm);
+}
+
+/* Empty State */
+.nexus-empty-state {
+  background: var(--nexus-bg-elevated);
+  border: 1px solid var(--nexus-border-light);
+  border-radius: var(--nexus-radius-2xl);
+  padding: var(--nexus-space-4xl);
+  text-align: center;
+  animation: slideUp 0.4s ease-out;
+}
+
+.nexus-empty-icon {
+  font-size: 4rem;
+  margin-bottom: var(--nexus-space-lg);
+  animation: pulse 2s infinite;
+}
+
+.nexus-empty-title {
+  font-size: var(--nexus-text-2xl);
+  font-weight: var(--nexus-font-bold);
+  color: var(--nexus-text-primary);
+  margin: 0 0 var(--nexus-space-md) 0;
+}
+
+.nexus-empty-subtitle {
+  font-size: var(--nexus-text-base);
+  color: var(--nexus-text-tertiary);
+  margin: 0;
+}
+
+/* Sidebar */
+.nexus-sidebar {
+  position: sticky;
+  top: calc(var(--nexus-header-height) + var(--nexus-space-xl));
+  height: fit-content;
+  max-height: calc(100vh - var(--nexus-header-height) - var(--nexus-space-2xl));
+  overflow-y: auto;
+}
+
+/* Mobile Navigation */
+.nexus-mobile-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: var(--nexus-bg-elevated);
+  border-top: 1px solid var(--nexus-border-light);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
+  z-index: var(--nexus-z-fixed);
+  padding: var(--nexus-space-sm) var(--nexus-space-lg);
+  /* Safe area insets for home indicator */
+  padding-bottom: max(env(safe-area-inset-bottom, 0), var(--nexus-space-sm));
+}
+
+.nexus-mobile-nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nexus-space-xs);
+  padding: var(--nexus-space-sm);
+  border-radius: var(--nexus-radius-lg);
+  color: var(--nexus-text-tertiary);
+  text-decoration: none;
+  transition: all var(--nexus-transition-base);
+  font-size: var(--nexus-text-xs);
+  font-weight: var(--nexus-font-medium);
+}
+
+.nexus-mobile-nav-item i {
+  font-size: var(--nexus-text-xl);
+}
+
+.nexus-mobile-nav-item:hover,
+.nexus-mobile-nav-item.active {
+  color: var(--nexus-primary);
+  background: rgba(99, 102, 241, 0.1);
+}
+
+/* Floating Action Button */
+.nexus-fab {
+  position: fixed;
+  bottom: 80px;
+  right: var(--nexus-space-xl);
+  width: 56px;
+  height: 56px;
+  border-radius: var(--nexus-radius-full);
+  background: linear-gradient(135deg, var(--nexus-primary), var(--nexus-secondary));
+  color: white;
+  border: none;
+  box-shadow: var(--nexus-shadow-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--nexus-text-xl);
+  transition: all var(--nexus-transition-base);
+  z-index: var(--nexus-z-fixed);
+}
+
+.nexus-fab:hover {
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: var(--nexus-shadow-xl);
+}
+
+.nexus-fab:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .nexus-home-layout {
+    grid-template-columns: 1fr;
+    gap: var(--nexus-space-xl);
+  }
+
+  .nexus-sidebar {
+    position: relative;
+    top: 0;
+    max-height: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nexus-home-layout {
+    padding: var(--nexus-space-lg);
+    gap: var(--nexus-space-lg);
+  }
+
+  .nexus-mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .nexus-home-container {
+    padding-bottom: 80px;
+  }
+
+  .nexus-fab {
+    bottom: 100px;
+    right: var(--nexus-space-lg);
+  }
+
+  .nexus-stories-section,
+  .nexus-post-composer-section {
+    padding: var(--nexus-space-lg);
+  }
+}
+

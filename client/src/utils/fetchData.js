@@ -1,10 +1,17 @@
 import axios from 'axios';
 
 // Create axios instance with base URL
+const getApiBaseURL = () => {
+  if (process.env.REACT_APP_API_URL) {
+    return `${process.env.REACT_APP_API_URL}/api`;
+  }
+  return process.env.NODE_ENV === 'production' 
+    ? '/api' // Use relative path in production if no env var
+    : 'http://localhost:8080/api';
+};
+
 const api = axios.create({
-    baseURL: process.env.NODE_ENV === 'production' 
-        ? 'https://mysocial-lvsn.onrender.com/api'
-        : 'http://localhost:8080/api',
+    baseURL: getApiBaseURL(),
     withCredentials: true
 });
 

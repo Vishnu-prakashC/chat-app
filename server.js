@@ -10,11 +10,11 @@ const { scheduleExpiryChecks, scheduleCleanup } = require('./utils/groupExpirySc
 
 process.removeAllListeners('warning');
 
-// Allow your hosted frontend origin (Render) and localhost during development
+// Allow your hosted frontend origin and localhost during development
 const allowedOrigins = process.env.NODE_ENV === 'production'
-  ? [
-      'https://mysocial-frontend-nm3u.onrender.com', // your Render frontend
-    ]
+  ? (process.env.ALLOWED_ORIGINS 
+      ? process.env.ALLOWED_ORIGINS.split(',').map(origin => origin.trim())
+      : [])
   : [
       'http://localhost:3000'
     ];
@@ -40,6 +40,14 @@ app.options("*" , cors(corsOptions));
 app.use(cors(corsOptions));
 app.use(cookieParser())
 
+// Health check endpoint (must be before routes)
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ 
+    status: 'ok', 
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || 'development'
+  });
+});
 
 //#region // !Socket
 const http = require('http').createServer(app);
