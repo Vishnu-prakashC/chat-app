@@ -1,25 +1,28 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-require('dotenv').config({ path: '.env.temp' });
+require('dotenv').config();
 
-// Admin user details
+// Admin user details: allow overriding via environment variables
 const adminUser = {
-    username: 'admin',
-    email: 'admin@example.com',
-    password: 'Admin@123', // You should change this after first login
+    username: process.env.ADMIN_USERNAME || 'admin',
+    email: process.env.ADMIN_EMAIL || 'admin@example.com',
+    password: process.env.ADMIN_PASSWORD || 'Admin@123', // Change after first login
     role: 'admin',
     isAdmin: true
 };
 
+// Support both MONGODB_URL and MONGODB_URI env names
+const mongoUri = process.env.MONGODB_URL || process.env.MONGODB_URI || 'mongodb://localhost:27017/social_media';
+
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/social_media', {
+mongoose.connect(mongoUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(async () => {
     console.log('Connected to MongoDB');
     await createAdmin();
 }).catch(err => {
-    console.error('Error connecting to MongoDB:', err);
+    console.error('Error connecting to MongoDB:', err && err.message ? err.message : err);
     process.exit(1);
 });
 
@@ -63,21 +66,21 @@ async function createAdmin() {
             username: adminUser.username,
             email: adminUser.email,
             password: hashedPassword,
-            role: 'admin',
-            isAdmin: true
+            role: adminUser.role,
+            isAdmin: adminUser.isAdmin
         });
 
         await newAdmin.save();
         
         console.log('Admin user created successfully!');
-        console.log('Username: admin');
-        console.log('Email: admin@example.com');
-        console.log('Password: Admin@123');
+        console.log(`Username: ${adminUser.username}`);
+        console.log(`Email: ${adminUser.email}`);
+        console.log('Password: [hidden] (use ADMIN_PASSWORD env to set)');
         console.log('\nIMPORTANT: Change this password after first login!');
         
         process.exit(0);
     } catch (error) {
-        console.error('Error creating admin user:', error);
+        console.error('Error creating admin user:', error && error.message ? error.message : error);
         process.exit(1);
     }
 }
