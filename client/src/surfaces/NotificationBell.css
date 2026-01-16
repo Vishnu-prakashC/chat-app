@@ -1,0 +1,71 @@
+/* ===================================
+   AURA NOTIFICATION BELL
+   Notification indicator and panel
+   =================================== */
+
+.aura-notification-bell {
+  position: relative;
+}
+
+.aura-bell-trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--aura-radius-lg);
+  background: transparent;
+  border: none;
+  color: var(--aura-text-secondary);
+  cursor: pointer;
+  transition: all var(--aura-transition-fast);
+}
+
+.aura-bell-trigger:hover {
+  background: var(--aura-bg-surface);
+  color: var(--aura-text-primary);
+}
+
+.aura-bell-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  background: var(--aura-coral);
+  color: var(--aura-white);
+  border-radius: var(--aura-radius-full);
+  font-size: 10px;
+  font-weight: var(--aura-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
+  animation: aura-pulse 2s infinite;
+}
+
+.aura-notification-panel {
+  position: absolute;
+  top: calc(100% + var(--aura-space-2));
+  right: 0;
+  width: 360px;
+  max-height: 480px;
+  background: var(--aura-bg-elevated);
+  border: 1px solid var(--aura-border-subtle);
+  border-radius: var(--aura-radius-xl);
+  box-shadow: var(--aura-shadow-xl);
+  z-index: var(--aura-z-dropdown);
+  animation: aura-scale-in var(--aura-transition-base);
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .aura-notification-panel {
+    right: var(--aura-space-4);
+    left: var(--aura-space-4);
+    width: auto;
+  }
+}
+

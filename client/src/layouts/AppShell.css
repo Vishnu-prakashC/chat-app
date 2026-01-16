@@ -1,0 +1,20 @@
+.aura-app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--aura-bg-primary);
+}
+
+.aura-main-content {
+  flex: 1;
+  padding-bottom: calc(var(--aura-dock-height) + var(--aura-space-4));
+  padding-top: calc(var(--aura-header-height) + var(--aura-space-4));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 768px) {
+  .aura-main-content {
+    padding-bottom: var(--aura-space-4);
+  }
+}

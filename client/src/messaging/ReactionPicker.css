@@ -1,0 +1,35 @@
+.aura-reaction-picker {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--aura-space-2);
+  background: var(--aura-bg-elevated);
+  border: 1px solid var(--aura-border-subtle);
+  border-radius: var(--aura-radius-full);
+  padding: var(--aura-space-2);
+  box-shadow: var(--aura-shadow-lg);
+  z-index: var(--aura-z-popover);
+  margin-bottom: var(--aura-space-2);
+}
+
+.aura-reaction-option {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: var(--aura-radius-full);
+  transition: all var(--aura-transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aura-reaction-option:hover {
+  background: var(--aura-bg-surface);
+  transform: scale(1.2);
+}
+

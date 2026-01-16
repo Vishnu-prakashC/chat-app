@@ -22,7 +22,6 @@ import { getNotifies } from "./redux/actions/notifyAction";
 
 import { GLOBALTYPES } from "./redux/actions/globalTypes";
 import SocketClient from "./SocketClient";
-import { initViewportFix } from "./utils/viewportFix";
 import './styles/nexus-design-system.css';
 import './styles/modern-layout.css';
 
@@ -66,11 +65,9 @@ function App() {
             const res = await fetch('/api/health', { signal: controller.signal });
             clearTimeout(timeout);
             if (res.ok) {
-              const socketUrl = process.env.REACT_APP_SOCKET_URL || 
-                (process.env.NODE_ENV === 'production' 
-                  ? window.location.origin 
-                  : 'http://localhost:8080');
-              const socket = io(socketUrl, {
+              const socket = io(process.env.REACT_APP_SOCKET_URL || (process.env.NODE_ENV === 'production'
+                ? window.location.origin
+                : 'http://localhost:8080'), {
                 transports: ['websocket', 'polling'],
                 withCredentials: true,
                 forceNew: false,
@@ -161,12 +158,6 @@ function App() {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme ? 'dark' : 'light');
   }, [theme]);
-
-  // Fix viewport height for mobile browsers
-  useEffect(() => {
-    const cleanup = initViewportFix();
-    return cleanup;
-  }, []);
 
   // Show loading screen during initialization
   if (isInitializing) {

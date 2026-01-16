@@ -1,0 +1,64 @@
+.aura-conversation-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--aura-bg-primary);
+}
+
+.aura-conversation-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--aura-space-8);
+}
+
+.aura-empty-state {
+  text-align: center;
+  max-width: 400px;
+}
+
+.aura-empty-icon {
+  margin-bottom: var(--aura-space-6);
+}
+
+.aura-empty-state h2 {
+  font-size: var(--aura-text-2xl);
+  font-weight: var(--aura-weight-semibold);
+  color: var(--aura-text-primary);
+  margin-bottom: var(--aura-space-2);
+}
+
+.aura-empty-state p {
+  font-size: var(--aura-text-base);
+  color: var(--aura-text-secondary);
+}
+
+.aura-conversation-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--aura-space-6);
+  -webkit-overflow-scrolling: touch;
+}
+
+.aura-conversation-start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.aura-start-hint {
+  padding: var(--aura-space-4) var(--aura-space-6);
+  background: var(--aura-bg-surface);
+  border-radius: var(--aura-radius-full);
+  color: var(--aura-text-tertiary);
+  font-size: var(--aura-text-sm);
+}
+
+.aura-messages-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--aura-space-3);
+}
+

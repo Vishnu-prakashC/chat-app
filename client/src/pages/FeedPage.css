@@ -1,0 +1,24 @@
+.aura-feed-page {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--aura-bg-primary);
+}
+
+.aura-feed-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 var(--aura-space-4);
+}
+
+.aura-feed-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--aura-space-6);
+  padding: var(--aura-space-6) 0;
+}
+
+@media (min-width: 1024px) {
+  .aura-feed-container {
+    max-width: 680px;
+  }
+}

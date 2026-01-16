@@ -1,0 +1,71 @@
+/* ===================================
+   AURA POST ACTIONS
+   Post interactions and comments
+   =================================== */
+
+.aura-post-actions {
+  padding: var(--aura-space-3) var(--aura-space-5) var(--aura-space-4);
+  border-top: 1px solid var(--aura-border-subtle);
+}
+
+.aura-post-actions-row {
+  display: flex;
+  align-items: center;
+  gap: var(--aura-space-4);
+  margin-bottom: var(--aura-space-3);
+}
+
+.aura-action-button {
+  display: flex;
+  align-items: center;
+  gap: var(--aura-space-2);
+  padding: var(--aura-space-2);
+  background: transparent;
+  border: none;
+  border-radius: var(--aura-radius-lg);
+  color: var(--aura-text-secondary);
+  font-size: var(--aura-text-sm);
+  font-weight: var(--aura-weight-medium);
+  cursor: pointer;
+  transition: all var(--aura-transition-fast);
+  min-height: 40px;
+  min-width: 40px;
+}
+
+.aura-action-button:hover {
+  background: var(--aura-bg-surface);
+  color: var(--aura-text-primary);
+}
+
+.aura-action-button.active {
+  color: var(--aura-coral);
+}
+
+.aura-action-button svg {
+  flex-shrink: 0;
+}
+
+.aura-action-count {
+  font-size: var(--aura-text-sm);
+  font-weight: var(--aura-weight-medium);
+}
+
+.aura-post-stats {
+  padding: var(--aura-space-2) 0;
+  border-top: 1px solid var(--aura-border-subtle);
+  margin-top: var(--aura-space-2);
+}
+
+.aura-stat-text {
+  font-size: var(--aura-text-sm);
+  font-weight: var(--aura-weight-semibold);
+  color: var(--aura-text-primary);
+}
+
+.aura-post-comments-section {
+  margin-top: var(--aura-space-4);
+  padding-top: var(--aura-space-4);
+  border-top: 1px solid var(--aura-border-subtle);
+  animation: aura-slide-up var(--aura-transition-base);
+}
+

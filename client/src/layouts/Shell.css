@@ -1,0 +1,22 @@
+.aura-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--aura-bg-primary);
+  position: relative;
+}
+
+.aura-shell-main {
+  flex: 1;
+  width: 100%;
+  padding-bottom: var(--aura-dock-height);
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  .aura-shell-main {
+    padding-bottom: 0;
+    padding-top: var(--aura-header-height);
+  }
+}
+

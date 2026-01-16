@@ -1,0 +1,21 @@
+/* ===================================
+   AURA POST CARD
+   Individual post surface
+   =================================== */
+
+.aura-post-card {
+  background: var(--aura-bg-elevated);
+  border: 1px solid var(--aura-border-subtle);
+  border-radius: var(--aura-radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--aura-shadow-sm);
+  transition: all var(--aura-transition-base);
+  animation: aura-slide-up var(--aura-transition-base) both;
+}
+
+.aura-post-card:hover {
+  box-shadow: var(--aura-shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--aura-border-medium);
+}
+

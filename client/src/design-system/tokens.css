@@ -1,0 +1,219 @@
+/* ============================================
+   AURA DESIGN SYSTEM
+   Complete rebuild - Zero similarity to previous UI
+   ============================================ */
+
+:root {
+  /* ========== COLOR PALETTE ========== */
+  /* Primary Brand Colors - Deep Ocean & Coral */
+  --aura-ocean: #0a1929;
+  --aura-ocean-light: #1a2f4a;
+  --aura-ocean-dark: #050d16;
+  
+  --aura-coral: #ff6b6b;
+  --aura-coral-light: #ff8787;
+  --aura-coral-dark: #e55555;
+  
+  /* Secondary Colors - Sky & Amber */
+  --aura-sky: #4dabf7;
+  --aura-sky-light: #74c0fc;
+  --aura-sky-dark: #339af0;
+  
+  --aura-amber: #ffd43b;
+  --aura-amber-light: #ffe066;
+  --aura-amber-dark: #fcc419;
+  
+  /* Accent - Mint */
+  --aura-mint: #51cf66;
+  --aura-mint-light: #69db7c;
+  --aura-mint-dark: #37b24d;
+  
+  /* Neutral Scale */
+  --aura-neutral-0: #ffffff;
+  --aura-neutral-50: #f8f9fa;
+  --aura-neutral-100: #e9ecef;
+  --aura-neutral-200: #dee2e6;
+  --aura-neutral-300: #ced4da;
+  --aura-neutral-400: #adb5bd;
+  --aura-neutral-500: #868e96;
+  --aura-neutral-600: #495057;
+  --aura-neutral-700: #343a40;
+  --aura-neutral-800: #212529;
+  --aura-neutral-900: #0d1117;
+  
+  /* Semantic Colors */
+  --aura-success: var(--aura-mint);
+  --aura-warning: var(--aura-amber);
+  --aura-error: var(--aura-coral);
+  --aura-info: var(--aura-sky);
+  
+  /* Background System */
+  --aura-bg-primary: var(--aura-neutral-0);
+  --aura-bg-secondary: var(--aura-neutral-50);
+  --aura-bg-elevated: var(--aura-neutral-0);
+  --aura-bg-surface: var(--aura-neutral-50);
+  --aura-bg-overlay: rgba(10, 25, 41, 0.75);
+  
+  /* Border Colors */
+  --aura-border-subtle: var(--aura-neutral-200);
+  --aura-border-default: var(--aura-neutral-300);
+  --aura-border-strong: var(--aura-neutral-400);
+  
+  /* Text Colors */
+  --aura-text-primary: var(--aura-neutral-900);
+  --aura-text-secondary: var(--aura-neutral-600);
+  --aura-text-tertiary: var(--aura-neutral-500);
+  --aura-text-inverse: var(--aura-neutral-0);
+  
+  /* ========== TYPOGRAPHY ========== */
+  /* Font Family - Inter for modern, clean look */
+  --aura-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --aura-font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  
+  /* Font Sizes - Modular scale (1.25 ratio) */
+  --aura-text-xs: 0.75rem;      /* 12px */
+  --aura-text-sm: 0.875rem;     /* 14px */
+  --aura-text-base: 1rem;       /* 16px */
+  --aura-text-lg: 1.125rem;     /* 18px */
+  --aura-text-xl: 1.25rem;      /* 20px */
+  --aura-text-2xl: 1.5rem;      /* 24px */
+  --aura-text-3xl: 1.875rem;    /* 30px */
+  --aura-text-4xl: 2.25rem;     /* 36px */
+  --aura-text-5xl: 3rem;        /* 48px */
+  
+  /* Font Weights */
+  --aura-weight-light: 300;
+  --aura-weight-regular: 400;
+  --aura-weight-medium: 500;
+  --aura-weight-semibold: 600;
+  --aura-weight-bold: 700;
+  
+  /* Line Heights */
+  --aura-leading-tight: 1.25;
+  --aura-leading-normal: 1.5;
+  --aura-leading-relaxed: 1.75;
+  
+  /* ========== SPACING SCALE ========== */
+  /* 4px base unit - consistent spacing system */
+  --aura-space-0: 0;
+  --aura-space-1: 0.25rem;   /* 4px */
+  --aura-space-2: 0.5rem;    /* 8px */
+  --aura-space-3: 0.75rem;   /* 12px */
+  --aura-space-4: 1rem;      /* 16px */
+  --aura-space-5: 1.25rem;   /* 20px */
+  --aura-space-6: 1.5rem;    /* 24px */
+  --aura-space-8: 2rem;      /* 32px */
+  --aura-space-10: 2.5rem;   /* 40px */
+  --aura-space-12: 3rem;     /* 48px */
+  --aura-space-16: 4rem;     /* 64px */
+  --aura-space-20: 5rem;     /* 80px */
+  --aura-space-24: 6rem;     /* 96px */
+  
+  /* ========== BORDER RADIUS ========== */
+  --aura-radius-none: 0;
+  --aura-radius-sm: 0.25rem;    /* 4px */
+  --aura-radius-md: 0.5rem;     /* 8px */
+  --aura-radius-lg: 0.75rem;    /* 12px */
+  --aura-radius-xl: 1rem;       /* 16px */
+  --aura-radius-2xl: 1.5rem;     /* 24px */
+  --aura-radius-full: 9999px;
+  
+  /* ========== SHADOW SYSTEM ========== */
+  --aura-shadow-xs: 0 1px 2px 0 rgba(10, 25, 41, 0.05);
+  --aura-shadow-sm: 0 1px 3px 0 rgba(10, 25, 41, 0.1), 0 1px 2px 0 rgba(10, 25, 41, 0.06);
+  --aura-shadow-md: 0 4px 6px -1px rgba(10, 25, 41, 0.1), 0 2px 4px -1px rgba(10, 25, 41, 0.06);
+  --aura-shadow-lg: 0 10px 15px -3px rgba(10, 25, 41, 0.1), 0 4px 6px -2px rgba(10, 25, 41, 0.05);
+  --aura-shadow-xl: 0 20px 25px -5px rgba(10, 25, 41, 0.1), 0 10px 10px -5px rgba(10, 25, 41, 0.04);
+  --aura-shadow-2xl: 0 25px 50px -12px rgba(10, 25, 41, 0.25);
+  --aura-shadow-inner: inset 0 2px 4px 0 rgba(10, 25, 41, 0.06);
+  
+  /* ========== TRANSITIONS ========== */
+  --aura-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --aura-transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --aura-transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* ========== Z-INDEX SCALE ========== */
+  --aura-z-base: 0;
+  --aura-z-dropdown: 1000;
+  --aura-z-sticky: 1020;
+  --aura-z-fixed: 1030;
+  --aura-z-modal-backdrop: 1040;
+  --aura-z-modal: 1050;
+  --aura-z-popover: 1060;
+  --aura-z-tooltip: 1070;
+  
+  /* ========== LAYOUT ========== */
+  --aura-container-max-width: 1200px;
+  --aura-container-padding: var(--aura-space-4);
+  --aura-header-height: 64px;
+  --aura-dock-height: 72px;
+}
+
+/* ========== DARK MODE ========== */
+[data-theme="dark"] {
+  --aura-bg-primary: var(--aura-ocean-dark);
+  --aura-bg-secondary: var(--aura-ocean);
+  --aura-bg-elevated: var(--aura-ocean-light);
+  --aura-bg-surface: var(--aura-ocean);
+  --aura-bg-overlay: rgba(0, 0, 0, 0.85);
+  
+  --aura-border-subtle: rgba(255, 255, 255, 0.1);
+  --aura-border-default: rgba(255, 255, 255, 0.15);
+  --aura-border-strong: rgba(255, 255, 255, 0.2);
+  
+  --aura-text-primary: var(--aura-neutral-0);
+  --aura-text-secondary: var(--aura-neutral-300);
+  --aura-text-tertiary: var(--aura-neutral-400);
+  --aura-text-inverse: var(--aura-neutral-900);
+  
+  --aura-shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --aura-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --aura-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --aura-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --aura-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  --aura-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* ========== BASE RESET ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--aura-font-family);
+  font-size: var(--aura-text-base);
+  font-weight: var(--aura-weight-regular);
+  line-height: var(--aura-leading-normal);
+  color: var(--aura-text-primary);
+  background-color: var(--aura-bg-primary);
+  transition: background-color var(--aura-transition-base), color var(--aura-transition-base);
+}
+
+/* ========== UTILITY CLASSES ========== */
+.aura-container {
+  max-width: var(--aura-container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--aura-container-padding);
+}
+
+.aura-surface {
+  background: var(--aura-bg-elevated);
+  border: 1px solid var(--aura-border-subtle);
+  border-radius: var(--aura-radius-xl);
+  box-shadow: var(--aura-shadow-sm);
+}
+
+.aura-card {
+  background: var(--aura-bg-elevated);
+  border-radius: var(--aura-radius-xl);
+  box-shadow: var(--aura-shadow-md);
+  padding: var(--aura-space-6);
+}

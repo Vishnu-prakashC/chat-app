@@ -1,0 +1,51 @@
+/* ===================================
+   AURA FEED STREAM
+   Post feed container
+   =================================== */
+
+.aura-feed-stream-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--aura-space-6);
+}
+
+.aura-feed-loading,
+.aura-feed-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--aura-space-16) var(--aura-space-4);
+  text-align: center;
+}
+
+.aura-feed-loading img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--aura-space-4);
+  opacity: 0.6;
+}
+
+.aura-feed-loading p {
+  color: var(--aura-text-tertiary);
+  font-size: var(--aura-text-sm);
+}
+
+.aura-empty-illustration {
+  margin-bottom: var(--aura-space-6);
+  color: var(--aura-text-tertiary);
+  opacity: 0.4;
+}
+
+.aura-feed-empty h3 {
+  font-size: var(--aura-text-xl);
+  font-weight: var(--aura-weight-semibold);
+  color: var(--aura-text-primary);
+  margin-bottom: var(--aura-space-2);
+}
+
+.aura-feed-empty p {
+  color: var(--aura-text-tertiary);
+  font-size: var(--aura-text-base);
+}
+

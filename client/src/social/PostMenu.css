@@ -1,0 +1,86 @@
+/* ===================================
+   AURA POST MENU
+   Post options dropdown
+   =================================== */
+
+.aura-post-menu {
+  position: relative;
+}
+
+.aura-post-menu-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--aura-radius-lg);
+  background: transparent;
+  border: none;
+  color: var(--aura-text-tertiary);
+  cursor: pointer;
+  transition: all var(--aura-transition-fast);
+}
+
+.aura-post-menu-trigger:hover {
+  background: var(--aura-bg-surface);
+  color: var(--aura-text-primary);
+}
+
+.aura-post-menu-dropdown {
+  position: absolute;
+  top: calc(100% + var(--aura-space-2));
+  right: 0;
+  min-width: 180px;
+  background: var(--aura-bg-elevated);
+  border: 1px solid var(--aura-border-subtle);
+  border-radius: var(--aura-radius-xl);
+  box-shadow: var(--aura-shadow-xl);
+  padding: var(--aura-space-2);
+  z-index: var(--aura-z-dropdown);
+  animation: aura-scale-in var(--aura-transition-base);
+}
+
+.aura-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--aura-space-3);
+  width: 100%;
+  padding: var(--aura-space-3) var(--aura-space-3);
+  background: transparent;
+  border: none;
+  border-radius: var(--aura-radius-lg);
+  color: var(--aura-text-primary);
+  font-size: var(--aura-text-sm);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--aura-transition-fast);
+}
+
+.aura-menu-item:hover {
+  background: var(--aura-bg-surface);
+  color: var(--aura-text-primary);
+}
+
+.aura-menu-item.danger {
+  color: var(--aura-error);
+}
+
+.aura-menu-item.danger:hover {
+  background: rgba(255, 107, 107, 0.1);
+}
+
+.aura-menu-item svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.aura-menu-item:hover svg {
+  opacity: 1;
+}
+
+.aura-menu-divider {
+  height: 1px;
+  background: var(--aura-border-subtle);
+  margin: var(--aura-space-2) 0;
+}
+

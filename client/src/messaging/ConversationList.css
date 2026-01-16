@@ -1,0 +1,109 @@
+.aura-conversation-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--aura-bg-elevated);
+  border-right: 1px solid var(--aura-border-subtle);
+}
+
+.aura-conversation-list-header {
+  padding: var(--aura-space-4);
+  border-bottom: 1px solid var(--aura-border-subtle);
+  position: sticky;
+  top: 0;
+  background: var(--aura-bg-elevated);
+  z-index: var(--aura-z-sticky);
+}
+
+.aura-conversation-list-header h2 {
+  font-size: var(--aura-text-xl);
+  font-weight: var(--aura-weight-semibold);
+  color: var(--aura-text-primary);
+}
+
+.aura-conversation-list-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.aura-conversation-empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--aura-space-8);
+}
+
+.aura-conversation-empty-state p {
+  font-size: var(--aura-text-base);
+  color: var(--aura-text-secondary);
+}
+
+.aura-conversation-item {
+  display: flex;
+  align-items: center;
+  gap: var(--aura-space-3);
+  padding: var(--aura-space-4);
+  border-bottom: 1px solid var(--aura-border-subtle);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color var(--aura-transition-base);
+  cursor: pointer;
+}
+
+.aura-conversation-item:hover {
+  background: var(--aura-bg-surface);
+}
+
+.aura-conversation-item.active {
+  background: var(--aura-bg-surface);
+  border-left: 3px solid var(--aura-coral);
+}
+
+.aura-conversation-item-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--aura-space-1);
+}
+
+.aura-conversation-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--aura-space-2);
+}
+
+.aura-conversation-item-header h3 {
+  font-size: var(--aura-text-base);
+  font-weight: var(--aura-weight-semibold);
+  color: var(--aura-text-primary);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.aura-conversation-time {
+  font-size: var(--aura-text-xs);
+  color: var(--aura-text-tertiary);
+  flex-shrink: 0;
+}
+
+.aura-conversation-preview {
+  font-size: var(--aura-text-sm);
+  color: var(--aura-text-secondary);
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .aura-conversation-list {
+    border-right: none;
+    border-bottom: 1px solid var(--aura-border-subtle);
+  }
+}

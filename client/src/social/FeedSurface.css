@@ -1,0 +1,42 @@
+/* ===================================
+   AURA FEED SURFACE
+   Main feed layout - feed-first design
+   =================================== */
+
+.aura-feed-surface {
+  width: 100%;
+  min-height: calc(100vh - var(--aura-surface-header-height) - var(--aura-dock-height));
+  background: var(--aura-bg-base);
+  padding: var(--aura-space-6) 0;
+}
+
+.aura-feed-container {
+  max-width: var(--aura-feed-max-width);
+  margin: 0 auto;
+  padding: 0 var(--aura-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--aura-space-6);
+}
+
+.aura-composer-card {
+  animation: aura-slide-up var(--aura-transition-base);
+}
+
+.aura-feed-stream {
+  display: flex;
+  flex-direction: column;
+  gap: var(--aura-space-6);
+}
+
+@media (max-width: 768px) {
+  .aura-feed-surface {
+    padding: var(--aura-space-4) 0;
+  }
+  
+  .aura-feed-container {
+    padding: 0 var(--aura-space-3);
+    gap: var(--aura-space-4);
+  }
+}
+

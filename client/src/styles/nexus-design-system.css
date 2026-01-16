@@ -113,9 +113,8 @@
   --nexus-nav-width: 240px;
   --nexus-content-max-width: 1200px;
   
-  /* ========== Viewport Fix ========== */
+  /* ========== Mobile Viewport Fix ========== */
   --vh: 1vh; /* Will be updated by JavaScript for mobile browsers */
-  --visual-vh: 1vh; /* Visual viewport height */
 }
 
 /* ========== Dark Theme ========== */
@@ -166,6 +165,62 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   transition: background-color var(--nexus-transition-base), color var(--nexus-transition-base);
+  width: 100%;
+}
+
+/* Prevent horizontal overflow */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile-specific improvements */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  a,
+  input[type="button"],
+  input[type="submit"],
+  .nexus-button,
+  .nexus-chat-action-btn,
+  .nexus-post-action-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+    min-height: 44px;
+  }
+}
+
+/* Improve scroll performance */
+.nexus-messages-container,
+.nexus-messenger-sidebar {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* ========== Typography ========== */

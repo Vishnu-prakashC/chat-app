@@ -3,7 +3,7 @@
    =================================== */
 
 .nexus-home-container {
-  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
   padding-top: var(--nexus-header-height);
   background: var(--nexus-bg-primary);
 }
@@ -152,14 +152,13 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 64px;
+  height: calc(64px + env(safe-area-inset-bottom, 0px));
   background: var(--nexus-bg-elevated);
   border-top: 1px solid var(--nexus-border-light);
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
   z-index: var(--nexus-z-fixed);
   padding: var(--nexus-space-sm) var(--nexus-space-lg);
-  /* Safe area insets for home indicator */
-  padding-bottom: max(env(safe-area-inset-bottom, 0), var(--nexus-space-sm));
+  padding-bottom: calc(var(--nexus-space-sm) + env(safe-area-inset-bottom, 0px));
 }
 
 .nexus-mobile-nav-item {
@@ -245,7 +244,7 @@
   }
 
   .nexus-home-container {
-    padding-bottom: 80px;
+    padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
   }
 
   .nexus-fab {

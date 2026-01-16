@@ -1,0 +1,18 @@
+.aura-messages-page {
+  height: 100%;
+  background: var(--aura-bg-primary);
+}
+
+.aura-messages-layout {
+  display: flex;
+  height: calc(100vh - var(--aura-header-height) - var(--aura-dock-height));
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .aura-messages-layout {
+    height: calc(100vh - var(--aura-header-height));
+  }
+}
+

@@ -14,6 +14,7 @@
     "axios": "^1.12.2",
     "chart.js": "^3.9.1",
     "emoji-mart": "^3.0.1",
+    "framer-motion": "^6.5.1",
     "http-proxy-middleware": "^2.0.6",
     "i18next": "^21.10.0",
     "i18next-browser-languagedetector": "^6.1.8",
@@ -30,6 +31,7 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
     "socket.io-client": "^4.0.1",
+    "timeago.js": "^4.0.2",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

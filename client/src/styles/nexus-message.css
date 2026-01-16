@@ -5,13 +5,16 @@
 .nexus-messenger {
   display: flex;
   height: calc(var(--vh, 1vh) * 100 - var(--nexus-header-height));
+  min-height: calc(100vh - var(--nexus-header-height));
   background: var(--nexus-bg-primary);
   margin-top: var(--nexus-header-height);
 }
 
 /* Sidebar */
 .nexus-messenger-sidebar {
-  width: 360px;
+  width: 100%;
+  max-width: 360px;
+  min-width: 0;
   border-right: 1px solid var(--nexus-border-light);
   background: var(--nexus-bg-elevated);
   display: flex;
@@ -339,8 +342,12 @@
 /* Input Area */
 .nexus-chat-input-area {
   padding: var(--nexus-space-lg) var(--nexus-space-xl);
+  padding-bottom: calc(var(--nexus-space-lg) + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid var(--nexus-border-light);
   background: var(--nexus-bg-elevated);
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
 }
 
 .nexus-chat-input-container {
@@ -664,7 +671,12 @@
 @media (max-width: 768px) {
   .nexus-messenger {
     flex-direction: column;
-    height: calc(100vh - var(--nexus-header-height) - 64px);
+    height: calc(var(--vh, 1vh) * 100 - var(--nexus-header-height) - 64px);
+    min-height: calc(100vh - var(--nexus-header-height) - 64px);
+  }
+  
+  .nexus-messages-container {
+    padding-bottom: 80px; /* Space for input area */
   }
 
   .nexus-messenger-sidebar {

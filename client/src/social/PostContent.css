@@ -1,0 +1,44 @@
+/* ===================================
+   AURA POST CONTENT
+   Post body and media
+   =================================== */
+
+.aura-post-content {
+  padding: 0 var(--aura-space-5) var(--aura-space-4);
+}
+
+.aura-post-text {
+  margin-bottom: var(--aura-space-4);
+}
+
+.aura-post-text p {
+  font-size: var(--aura-text-base);
+  line-height: var(--aura-leading-relaxed);
+  color: var(--aura-text-primary);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.aura-post-expand {
+  margin-top: var(--aura-space-2);
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: var(--aura-coral);
+  font-size: var(--aura-text-sm);
+  font-weight: var(--aura-weight-medium);
+  cursor: pointer;
+  transition: opacity var(--aura-transition-fast);
+}
+
+.aura-post-expand:hover {
+  opacity: 0.8;
+}
+
+.aura-post-media {
+  margin-top: var(--aura-space-4);
+  border-radius: var(--aura-radius-xl);
+  overflow: hidden;
+  background: var(--aura-bg-surface);
+}
+

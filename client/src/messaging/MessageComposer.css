@@ -1,0 +1,119 @@
+.aura-message-composer {
+  padding: var(--aura-space-4);
+  background: var(--aura-bg-elevated);
+  border-top: 1px solid var(--aura-border-subtle);
+}
+
+.aura-composer-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--aura-space-3);
+}
+
+.aura-composer-media-preview {
+  display: flex;
+  gap: var(--aura-space-2);
+  overflow-x: auto;
+  padding: var(--aura-space-2) 0;
+}
+
+.aura-media-preview-item {
+  position: relative;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: var(--aura-radius-lg);
+  overflow: hidden;
+}
+
+.aura-media-preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aura-media-remove {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--aura-radius-full);
+  background: var(--aura-error);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aura-composer-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--aura-space-2);
+  background: var(--aura-bg-surface);
+  border: 1px solid var(--aura-border-subtle);
+  border-radius: var(--aura-radius-full);
+  padding: var(--aura-space-2) var(--aura-space-4);
+  transition: all var(--aura-transition-base);
+}
+
+.aura-composer-input-wrapper:focus-within {
+  border-color: var(--aura-coral);
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+.aura-composer-attach,
+.aura-composer-send {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--aura-radius-full);
+  border: none;
+  background: transparent;
+  color: var(--aura-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--aura-transition-base);
+}
+
+.aura-composer-attach:hover {
+  background: var(--aura-bg-elevated);
+  color: var(--aura-text-primary);
+}
+
+.aura-composer-send {
+  background: var(--aura-coral);
+  color: white;
+}
+
+.aura-composer-send:hover:not(:disabled) {
+  background: var(--aura-coral-dark);
+  transform: scale(1.05);
+}
+
+.aura-composer-send:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aura-composer-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--aura-text-primary);
+  font-size: var(--aura-text-base);
+  font-family: var(--aura-font-family);
+  outline: none;
+  padding: var(--aura-space-1) 0;
+}
+
+.aura-composer-input::placeholder {
+  color: var(--aura-text-tertiary);
+}
+

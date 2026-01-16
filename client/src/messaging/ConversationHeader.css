@@ -1,0 +1,31 @@
+.aura-conversation-header {
+  padding: var(--aura-space-4);
+  background: var(--aura-bg-elevated);
+  border-bottom: 1px solid var(--aura-border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: var(--aura-z-sticky);
+}
+
+.aura-conversation-header-content {
+  display: flex;
+  align-items: center;
+  gap: var(--aura-space-3);
+}
+
+.aura-conversation-info {
+  flex: 1;
+}
+
+.aura-conversation-info h3 {
+  font-size: var(--aura-text-lg);
+  font-weight: var(--aura-weight-semibold);
+  color: var(--aura-text-primary);
+  margin-bottom: var(--aura-space-1);
+}
+
+.aura-conversation-status {
+  font-size: var(--aura-text-sm);
+  color: var(--aura-text-secondary);
+}
+

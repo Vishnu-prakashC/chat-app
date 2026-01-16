@@ -1,0 +1,55 @@
+/* ===================================
+   AURA POST HEADER
+   Post author and metadata
+   =================================== */
+
+.aura-post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--aura-space-4) var(--aura-space-5);
+  border-bottom: 1px solid var(--aura-border-subtle);
+}
+
+.aura-post-author {
+  display: flex;
+  align-items: center;
+  gap: var(--aura-space-3);
+  flex: 1;
+  min-width: 0;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity var(--aura-transition-fast);
+}
+
+.aura-post-author:hover {
+  opacity: 0.8;
+}
+
+.aura-post-author-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.aura-post-author-name {
+  font-size: var(--aura-text-base);
+  font-weight: var(--aura-weight-semibold);
+  color: var(--aura-text-primary);
+  margin-bottom: var(--aura-space-1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.aura-post-author-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--aura-space-2);
+  font-size: var(--aura-text-sm);
+  color: var(--aura-text-tertiary);
+}
+
+.aura-post-time {
+  font-size: var(--aura-text-xs);
+}
+
